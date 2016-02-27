@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @photo_product.name
+p
+  strong Price:
+  = @photo_product.price
+
+/* 追加箇所　開始*/
+p
+  strong Image:
+  - if @photo_product.image?
+    .thumbnail
+      = image_tag @photo_product.image.url
+/* 追加箇所　終了*/
+
+
+= link_to 'Edit', edit_photo_product_path(@photo_product)
+'|
+= link_to 'Back', photo_products_path

@@ -1,0 +1,23 @@
+h1 Listing photo_products
+
+table
+  thead
+    tr
+      th Name
+      th Price
+      th
+      th
+      th
+
+  tbody
+    - @photo_products.each do |photo_product|
+      tr
+        td = photo_product.name
+        td = photo_product.price
+        td = link_to 'Show', photo_product
+        td = link_to 'Edit', edit_photo_product_path(photo_product)
+        td = link_to 'Destroy', photo_product, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Photo product', new_photo_product_path

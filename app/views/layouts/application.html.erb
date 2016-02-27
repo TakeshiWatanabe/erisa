@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Erisa</title>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
+  <%= content_for :js %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+	<h1><%= link_to "ERISA", root_path %></h1>
+	<nav>
+		<ul>
+			<li>
+				<%= link_to "HOME", root_path %>
+				<%= link_to "PROFILE", profile_path %>
+				<%= link_to "SCHEDULE", schedule_path %>
+				<%= link_to "PHOTO", photo_path %>
+				<%= link_to "MOVIE", movie_path %>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<%= yield %>
+
+<footer>
+	<div class="footer">
+		<h1 class="footer-title">Contact</h1>
+		<form method="POST" action="">
+			<p class="footer-font">Name：<br><input type='text' name="name" size="22"></p>
+			<p class="footer-font">E-mail：<br><input type="text" name="email" size="22"></p>
+			<p class="footer-font">Comment：<br><textarea name=""comment cols="20" rows="5"></textarea></p></form>
+			<button class="button-footer" type="submit">send</button>
+		</form>
+	</div>
+	<div class="icon">
+		<div class="tw">
+			<a href="https://twitter.com/search?q=%400815Essa&src=typd"><img src="../assets/images/icons/icon_Twitter.png" width="80px" height="80px" alt="twitter"></a>
+		</div>
+		<div class="fb">
+			<a href="https://www.facebook.com/erisa.kikuchi"><img src="../assets/images/icons/icon_Facebook.png" width="80px" height="80px" alt="facebook"></a>
+		</div>
+		<div class="in">
+			<a href="https://www.instagram.com/erisa.k815/"><img src="../assets/images/icons/icon_Instagram.png" width="80px" height="80px" alt="Instagram"></a>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

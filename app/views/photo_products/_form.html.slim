@@ -1,0 +1,33 @@
+= form_for @photo_product do |f|
+  - if @photo_product.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@photo_product.errors.count, "error")} prohibited this photo_product from being saved:"
+      ul
+        - @photo_product.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :price
+    = f.number_field :price
+
+  /* 追加箇所 開始*/
+  .field
+    = if @photo_product.image?
+      .thumbnail
+        = image_tag @photo_product.url
+    = end
+    = f.label :image
+    = f.file_filed :image
+    = f.hidden_field :image_cache
+  .field
+    /* DBに保存されているかつ、画像が保存する場合*/
+    - if @photo_product.persisted? && @photo_product.image?
+      label
+        = f.check_box :remove_image
+        p 画像を消去
+  /* 追加箇所 終了*/
+
+  .actions = f.submit
