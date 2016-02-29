@@ -5,6 +5,7 @@ class PhotoProductsController < ApplicationController
   # GET /photo_products.json
   def index
     @photo_products = PhotoProduct.all
+    # @user_images = current_user.upload
   end
 
   # GET /photo_products/1

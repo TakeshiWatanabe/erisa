@@ -6,21 +6,24 @@
         - @photo_product.errors.full_messages.each do |message|
           li = message
 
+  /* nameからtitleに変更*/
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.label :title
+    = f.text_field :title, size: "40x10", maxlength: "30"
+
+  /* commnet追加*/
   .field
-    = f.label :price
-    = f.number_field :price
+    = f.label :comment
+    = f.text_area :comment, size: "30x10", maxlength: 30
 
   /* 追加箇所 開始*/
   .field
     = if @photo_product.image?
       .thumbnail
         = image_tag @photo_product.url
-    = end
     = f.label :image
-    = f.file_filed :image
+    / = f.file_field :image
+    = f.file_field :image, class: 'form-control'
     = f.hidden_field :image_cache
   .field
     /* DBに保存されているかつ、画像が保存する場合*/
