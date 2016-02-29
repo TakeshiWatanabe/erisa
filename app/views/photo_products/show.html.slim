@@ -1,21 +1,23 @@
-p#notice = notice
+center
+  p#notice = notice
 
-p
-  strong Name:
-  = @photo_product.name
-p
-  strong Price:
-  = @photo_product.price
+  p.title
+    strong Title:
+    = @photo_product.title
 
-/* 追加箇所　開始*/
-p
-  strong Image:
-  - if @photo_product.image?
-    .thumbnail
-      = image_tag @photo_product.image.url
-/* 追加箇所　終了*/
+  /* 追加箇所　開始*/
+  p.img
+    strong Image:
+    - if @photo_product.image?
+      .thumbnail
+        = image_tag @photo_product.image.url
+  /* 追加箇所　終了*/
 
+  p.comment
+    strong Comment:
+    = @photo_product.comment
 
-= link_to 'Edit', edit_photo_product_path(@photo_product)
-'|
-= link_to 'Back', photo_products_path
+  .btn
+    h1.show
+      = link_to 'Edit', edit_photo_product_path(@photo_product)
+      = link_to 'Back', photo_products_path

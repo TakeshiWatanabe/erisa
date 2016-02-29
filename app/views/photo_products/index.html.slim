@@ -1,23 +1,21 @@
-h1 Listing photo_products
+center
+  .form
+    h1.form Upload Photo
 
-table
-  thead
-    tr
-      th Name
-      th Price
-      th
-      th
-      th
+    table
+      thead
+        tr
+          th.title Title
+          th.title Comment
 
-  tbody
-    - @photo_products.each do |photo_product|
-      tr
-        td = photo_product.name
-        td = photo_product.price
-        td = link_to 'Show', photo_product
-        td = link_to 'Edit', edit_photo_product_path(photo_product)
-        td = link_to 'Destroy', photo_product, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Photo product', new_photo_product_path
+      tbody
+        - @photo_products.each do |photo_product|
+          tr
+            td = photo_product.title
+            td = photo_product.comment
+            td = link_to 'Show', photo_product
+            td = link_to 'Edit', edit_photo_product_path(photo_product)
+            td = link_to 'Destroy', photo_product, data: {:confirm => 'Are you sure?'}, :method => :delete
+    .newPhotoButton
+      h1.form
+        = link_to 'New Photo product', new_photo_product_path

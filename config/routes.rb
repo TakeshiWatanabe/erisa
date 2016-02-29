@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   root 'home#top'
 
   resources :photo_products
-  get '/index' => 'photo_products#index'
-  get '/edit'  => 'photo_products#edit'
-  get '/new'   => 'photo_products#new'
-  get '/show'  => 'photo_products#show'
+    get '/index' => 'photo_products#index'
+    # get '/edit'  => 'photo_products#edit'
+    # get '/new'   => 'photo_products#new'
+    # get '/show'  => 'photo_products#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

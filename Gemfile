@@ -27,8 +27,11 @@ source 'https://rubygems.org' do
 	gem 'slim-rails', '3.0.1'
 
 	# 画像アップロード
-	gem 'carrierwave'
-	gem 'rmagick', require: 'RMagick'
+	# gem 'carrierwave'
+	# gem 'rmagick', require: 'RMagick'
+	gem 'carrierwave',  '0.10.0'
+  gem 'mini_magick',  '4.2.4'
+  # gem 'fog',          '1.37.0'
 
 	# SASS
   # gem 'sass-rails',   '5.0.4'
